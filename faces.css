@@ -1,0 +1,171 @@
+body {
+    display: grid;
+    background: white;
+    height: 100vh;
+    place-items: center;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+}
+
+.head1, .head2, .head3 {
+    width: 300px;
+    height: 300px;
+    border: 10px solid black;
+    border-radius: 50%;
+    background: yellow;
+    position: relative;
+    display: flex;
+}
+
+.head1 {
+    right: 80px;
+    background: blue;
+}
+
+.head3 {
+    left: 80px;
+    background: red;
+}
+/* Eyes */
+.lefteye1, .righteye1, .lefteye2, .righteye2, .lefteye3, .righteye3 {
+    border: 10px solid black;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background: black;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 45px;
+    left: 15px;
+
+}
+
+
+/* To Separate Eyes */
+.lefteye1, .lefteye2, .lefteye3 {
+    margin-right: 170px;
+}
+
+.righteye1, .righteye2, .righteye3 {
+    margin-left: 170px;
+}
+
+/* Pupils */ 
+.lefteye1::after, .lefteye2::after, .lefteye3::after, .righteye1::after, .righteye2::after, .righteye3::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+}
+/* Pupil Animations */
+.lefteye2::after, .righteye2::after {
+    animation: rotate-scale-up .90s linear infinite both;
+}
+@keyframes rotate-scale-up {
+    0% {
+        transform: scale(1) rotateZ(0);
+      }
+      50% {
+        transform: scale(2) rotateZ(180deg);
+      }
+      100% {
+        transform: scale(1) rotateZ(360deg);
+      }
+}
+
+.lefteye1::after, .righteye1::after {
+    animation: rotate-scale-up 3s linear infinite both;
+}
+
+@keyframes rotate-scale-up {
+    0% {
+        transform: scale(1) rotateZ(0);
+      }
+      50% {
+        transform: scale(2) rotateZ(180deg);
+      }
+      100% {
+        transform: scale(1) rotateZ(360deg);
+      }
+}
+
+.lefteye3::after, .righteye3::after {
+    animation: rotate-scale-up .30s linear infinite both;
+
+}
+
+@keyframes rotate-scale-up {
+    0% {
+        transform: scale(1) rotateZ(0);
+      }
+      50% {
+        transform: scale(2) rotateZ(180deg);
+      }
+      100% {
+        transform: scale(1) rotateZ(360deg);
+      }
+}
+
+/* Cheeks */
+.lefteye1::before, .righteye1::before, .lefteye2::before, .righteye2::before, .lefteye3::before, .righteye3::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    clip-path: circle(40% at 50% 0%);
+    border: 10px solid black;
+    top: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nose1, .nose2, .nose3 {
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  border: 10px solid black;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+  clip-path: circle(60% at 50% 100%);
+  left: 115px;
+  top: 130px;
+}
+
+.mouth1, .mouth2,.mouth3 {
+    width: 180px;
+  height: 180px;
+  position: absolute;
+  border: 10px solid black;
+  border-radius: 50%;
+  align-self: center;
+  clip-path: circle(55% at 50% 100%);
+  left: 50px;
+}
+/* To Make Open Smile */
+.mouth1::after, .mouth2::after, .mouth3::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border: 10px solid black;
+    border-radius: 50%;
+    align-self: center;
+    justify-content: center;
+    clip-path: circle(70% at 50% 100%);
+    top: 33px;
+    left: -4px;
+    
+}
